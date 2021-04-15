@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The input element</h1>
+
+<label for="lname">Current share price:</label>
+<input type="text" id="currentSharePrice" name="currentSharePrice"><br><br>
+<label for="fname">Broker sell limit:</label>
+<input type="text" id="sellLimit" name="sellLimit"><br><br>
+<label for="lname">Amount of shares I want to sell:</label>
+<input type="text" id="amountToSell" name="amountToSell"><br><br>
+
+<button onclick="myFunction()">Click Me</button>
+
+
+<div id="OutputText">Hello</div>
+
+
+<script>
+function myFunction() {
+	var SellLimit = document.getElementById("sellLimit").value
+  var SharesToSell = document.getElementById("amountToSell").value
+  var SharePrice = document.getElementById("currentSharePrice").value
+  
+  var SharePercentLimit = SellLimit/SharePrice;
+  var HowManyTimesToSell = SharePrice / SellLimit;
+  
+  
+  document.getElementById("OutputText").innerHTML = "SELL " + SharePercentLimit +"% OF A SHARE " + HowManyTimesToSell * SharesToSell + " TIMES";
+}
+</script>
+
+
+</body>
+</html>
